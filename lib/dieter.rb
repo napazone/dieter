@@ -1,5 +1,2 @@
-require "dieter/version"
-
-module Dieter
-  # Your code goes here...
-end
+require 'dieter/version'
+require 'dieter/engine' if defined?(Rails)

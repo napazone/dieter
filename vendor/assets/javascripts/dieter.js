@@ -185,7 +185,7 @@ I18n.toTime = function(scope, d) {
     return date.toString();
   }
 
-  return this.strftime(date, format);
+  return Date.prototype.strftime ? date.strftime(format) : this.strftime(date, format);
 };
 
 I18n.strftime = function(date, format) {

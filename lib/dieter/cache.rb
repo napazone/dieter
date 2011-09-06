@@ -9,6 +9,10 @@ module Dieter
       body if !digest || digest == current_digest
     end
 
+    def self.clear
+      @cache = {}
+    end
+
     private
 
     def self.current_digest(locale)

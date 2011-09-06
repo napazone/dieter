@@ -13,5 +13,9 @@ module Dieter
     initializer 'dieter.helpers' do
       ActionController::Base.helper(Helpers)
     end
+
+    config.to_prepare do
+      Dieter::Cache.clear unless Rails.configuration.action_controller.perform_caching
+    end
   end
 end

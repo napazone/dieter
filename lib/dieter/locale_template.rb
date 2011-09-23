@@ -10,7 +10,7 @@ module Dieter
     #
     def prepare
       loc_scope_line = data.strip
-      loc_scopes = loc_scope_line.empty? ? ['*'] : loc_scope_line.split(/\s*,\s*/)
+      loc_scopes = loc_scope_line.empty? ? [I18n.locale.to_s] : loc_scope_line.split(/\s*,\s*/)
       js = Converter.new(loc_scopes).js_body
       @code = js.dump
     end

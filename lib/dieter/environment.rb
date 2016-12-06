@@ -4,7 +4,6 @@ require 'sprockets/base'
 module Dieter
   class Environment < Sprockets::Base
     def initialize(backend, options = {})
-      puts "INITIALIZED"
       @backend = backend
 
       self.logger = Logger.new($stderr)
